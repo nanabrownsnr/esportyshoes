@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>eSporty Shoes</title>
+
+<link rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+ >
+ 
+</head>
+<body>
+ <div class="container my-2">
+ <h1>Purchase Report</h1> 
+  <table border="1" class = "table table-striped table-responsive-md">
+   <thead>
+    <tr>
+     <th>Purchase ID</th>
+     <th>Product ID</th>
+     <th>Email</th>
+     <th>Date</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr th:each="purchase : ${listPurchases}">
+     <td th:text="${purchase.purchase_id}"></td>
+     <td th:text="${purchase.product_id}"></td>
+     <td th:text="${purchase.email}"></td>
+     <td th:text="${purchase.date}"></td>
+    </tr>
+   </tbody>
+  </table>
+  <hr>
+
+  <a th:href="@{/}" class ="btn btn-primary btn-sm mb-3"> Back to Dashboard</a>
+ </div>
+         
+</body>
+</html>
+
